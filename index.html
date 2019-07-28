@@ -49,6 +49,9 @@
         <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
       </span>
 -->
+	  <span>
+	  	<h1>SVD</h1>
+	  </span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -60,6 +63,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#download">Download</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#preprocessing">Preprocessing</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#leaderboard">Leaderboard</a>
@@ -89,7 +95,7 @@
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
             <h3 class="mb-0">About</h3>
-            <div>SVD is a large-scale short video dataset.</div>
+            <div>SVD is a large-scale short video dataset, which contains over 50,0000 short videos collected from <a href="https://www.bytedance.com" >bytedance.com</a>.</div>
           </div>
         </div>
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -113,14 +119,20 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>Proceedings of International Conference on Computer Vision (ICCV),</em> 2019. 
                 </li>
 			</div>
-<!--            <div class="bibtex">
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+			<h3 class="mb-0">Citation</h3>			
+			Please cite the following papers if you use the dataset.
+            <div class="bibtex">
 				<pre>
  @inproceedings{JiangHLLLL2019,
    title={{SVD}: A Large-Scale Short Video Dataset for Near-Duplicate Video Retrieval},
    author={Qing-Yuan Jiang, Yi He, Gen Li, Jian Lin, Lei Li and Wu-Jun Li},
    booktitle={Proceedings of International Conference on Computer Vision},
    year={2019}
- }</pre></div>-->
+ }</pre></div>
           </div>
         </div>
 	</div>
@@ -132,6 +144,34 @@
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="download">
       <div class="w-100">
         <h2 class="mb-5">Download</h2>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Release Agreement</h3>
+			If you want to access this dataset, please sign the following agreement: [<a href="files/agreement.pdf">agreement</a>] and send the scanned agreement to the authors. 
+          </div>
+        </div>
+		
+      </div>
+
+    </section>
+
+    <hr class="m-0">
+	
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="preprocessing">
+      <div class="w-100">
+        <h2 class="mb-5">Preprocessing</h2>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Transformed Demos</h3>
+			We define five transformations for the SVD dataset, please refer to the repo: [<a href="https://github.com/svdbase/SVD">github</a>].
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Implementations of the baselines</h3>
+			We provide the implementations of the baselines for the SVD dataset, please refer to the repo: [<a href="https://github.com/svdbase/SVD">github</a>].
+          </div>
+        </div>
       </div>
 
     </section>
@@ -142,29 +182,50 @@
       <div class="w-100">
         <h2 class="mb-5">LeaderBoard</h2>
 
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">University of Colorado Boulder</h3>
-            <div class="subheading mb-3">Bachelor of Science</div>
-            <div>Computer Science - Web Development Track</div>
-            <p>GPA: 3.23</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">August 2006 - May 2010</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="resume-content">
-            <h3 class="mb-0">James Buchanan High School</h3>
-            <div class="subheading mb-3">Technology Magnet Program</div>
-            <p>GPA: 3.56</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">August 2002 - May 2006</span>
-          </div>
-        </div>
-
+      <table class="table table-responsive">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col" rowspan=2></th>
+            <th scope="col" rowspan=2 class="align-middle text-center">Method</th>
+            <th scope="col" rowspan=2 class="align-middle text-center">Code</th>
+            <th scope="col" colspan=6 class='text-center'>MAP@SVD</th>
+          </tr>
+          <tr>
+            <th scope="col" class='text-center'>N/A</th>
+            <th scope="col" class='text-center'>Cropping</th>
+            <th scope="col" class='text-center'>Black Border</th>
+            <th scope="col" class='text-center'>Rotation</th>
+            <th scope="col" class='text-center'>Clipping</th>
+            <th scope="col" class='text-center'>Speeding</th>
+          </tr>
+        </thead>
+        <tbody><tr>
+            <td scope="row" class='align-middle text-center'>1<br>
+              <span class="badge badge-secondary">N/A</span></td>
+            <td class='align-middle text-center'>DML<br/>
+              <span class="affiliation">Anonymous</span><br/></td>
+            <td class='align-middle text-center'><div class="crossed"><i class="far fa-file text-danger"></i></div></td>
+            <td class='align-middle text-center'><strong></strong></td>
+            <td class='align-middle text-center'><strong></strong></td>
+            <td class='align-middle text-center'><strong></strong></td>
+            <td class='align-middle text-center'><strong></strong></td>
+            <td class='align-middle text-center'><strong></strong></td>
+            <td class='align-middle text-center'><strong></strong></td>
+          </tr><tr>
+            <td scope="row" class='align-middle text-center'>2<br>
+              <span class="badge badge-secondary">N/A</span></td>
+            <td class='align-middle text-center'>CNNV/CNNL<br/>
+              <span class="affiliation">Anonymous</span><br/></td>
+            <td class='align-middle text-center'><div class="crossed"><i class="far fa-file text-danger"></i></div></td>
+            <td class='align-middle text-center'><strong></strong></td>
+            <td class='align-middle text-center'><strong></strong></td>
+            <td class='align-middle text-center'><strong></strong></td>
+            <td class='align-middle text-center'><strong></strong></td>
+            <td class='align-middle text-center'><strong></strong></td>
+            <td class='align-middle text-center'><strong></strong></td>
+          </tr><tr>
+          </tr></tbody>
+      </table>
       </div>
     </section>
 
@@ -174,60 +235,30 @@
       <div class="w-100">
         <h2 class="mb-5">Contact</h2>
 
-        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-        <ul class="list-inline dev-icons">
-          <li class="list-inline-item">
-            <i class="fab fa-html5"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-css3-alt"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-js-square"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-angular"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-react"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-node-js"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-sass"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-less"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-wordpress"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-gulp"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-grunt"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-npm"></i>
-          </li>
-        </ul>
-
-        <div class="subheading mb-3">Workflow</div>
+        <div class="subheading mb-3">If you have any questions about this dataset, please contact:</div>
         <ul class="fa-ul mb-0">
           <li>
             <i class="fa-li fa fa-check"></i>
-            Mobile-First, Responsive Design</li>
+            <a href="http://lamda.nju.edu.cn/jiangqy">Qing-Yuan Jiang</a> [<a href="mailto:jiangqy@lamda.nju.edu.cn">jiangqy@lamda.nju.edu.cn</a>]
+		  </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Cross Browser Testing &amp; Debugging</li>
+			Yi He</li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Cross Functional Teams</li>
+			Gen Li</li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Agile Development &amp; Scrum</li>
+			<a href="http://lamda.nju.edu.cn/linj">Jian Lin</a> [<a href="mailto:linj@lamda.nju.edu.cn">linj@lamda.nju.edu.cn</a>]
+		  </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+			<a href="http://www.cs.cmu.edu/~./leili/">Lei Li</a> [<a href="mailto:lileilab@bytedance.com">lileilab@bytedance.com</a>]
+		  </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+			<a href="http://cs.nju.edu.cn/lwj">Wu-Jun Li</a> [<a href="mailto:liwujun@nju.edu.cn">liwujun@nju.edu.cn</a>]
+		  </li>
         </ul>
       </div>
     </section>
